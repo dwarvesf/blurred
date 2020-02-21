@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08203CD023CD9CBE0006AE7C /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08203CCF23CD9CBE0006AE7C /* Bundle+Extension.swift */; };
+		083501CC23C5DF0400F6E567 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 083501CB23C5DF0400F6E567 /* EventMonitor.swift */; };
+		0851749B23FD099400B3B84F /* SettingObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0851749923FD099400B3B84F /* SettingObservable.swift */; };
+		0851749C23FD099400B3B84F /* PreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0851749A23FD099400B3B84F /* PreferenceView.swift */; };
+		085174A123FD2E9700B3B84F /* HotKey in Frameworks */ = {isa = PBXBuildFile; productRef = 085174A023FD2E9700B3B84F /* HotKey */; };
+		085174A323FD2EF300B3B84F /* GlobalKeyBindPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085174A223FD2EF300B3B84F /* GlobalKeyBindPreferences.swift */; };
+		085174A523FD34C500B3B84F /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085174A423FD34C500B3B84F /* PreferencesWindow.swift */; };
+		0853667723C4C0AC00567AA8 /* WindowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0853667623C4C0AC00567AA8 /* WindowInfo.swift */; };
+		0853667923C58F1E00567AA8 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0853667823C58F1E00567AA8 /* Collection+Extension.swift */; };
+		0889D10523C4720E00E867FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889D10423C4720E00E867FF /* AppDelegate.swift */; };
+		0889D10923C4721100E867FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0889D10823C4721100E867FF /* Assets.xcassets */; };
+		0889D10C23C4721100E867FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0889D10A23C4721100E867FF /* Main.storyboard */; };
+		0889D11423C4738900E867FF /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0889D11323C4738900E867FF /* ServiceManagement.framework */; };
+		0889D11623C473A400E867FF /* BlurredLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0889D10223C4720E00E867FF /* BlurredLauncher.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0889D11823C4758900E867FF /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0889D11723C4758900E867FF /* Util.swift */; };
+		08FF678D23A9156A00EACD58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08FF678C23A9156A00EACD58 /* AppDelegate.swift */; };
+		08FF679123A9156C00EACD58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08FF679023A9156C00EACD58 /* Assets.xcassets */; };
+		08FF679423A9156C00EACD58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08FF679223A9156C00EACD58 /* Main.storyboard */; };
+		5515742323C43FC5006BE18F /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515742223C43FC5006BE18F /* StatusBarController.swift */; };
+		5515742523C46FE8006BE18F /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */; };
+		553B8D1B23C2E43D0009CA0F /* DimManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B8D1A23C2E43D0009CA0F /* DimManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0889D11523C4739600E867FF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LoginItems;
+			dstSubfolderSpec = 1;
+			files = (
+				0889D11623C473A400E867FF /* BlurredLauncher.app in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08203CCF23CD9CBE0006AE7C /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		083501CB23C5DF0400F6E567 /* EventMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
+		0851749923FD099400B3B84F /* SettingObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingObservable.swift; sourceTree = "<group>"; };
+		0851749A23FD099400B3B84F /* PreferenceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceView.swift; sourceTree = "<group>"; };
+		0851749D23FD0A0B00B3B84F /* Blurred.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Blurred.entitlements; sourceTree = "<group>"; };
+		0851749E23FD0A3100B3B84F /* BlurredLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlurredLauncher.entitlements; sourceTree = "<group>"; };
+		085174A223FD2EF300B3B84F /* GlobalKeyBindPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalKeyBindPreferences.swift; sourceTree = "<group>"; };
+		085174A423FD34C500B3B84F /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		0853667623C4C0AC00567AA8 /* WindowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowInfo.swift; sourceTree = "<group>"; };
+		0853667823C58F1E00567AA8 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		0889D10223C4720E00E867FF /* BlurredLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlurredLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0889D10423C4720E00E867FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0889D10823C4721100E867FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0889D10B23C4721100E867FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0889D10D23C4721100E867FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0889D11323C4738900E867FF /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
+		0889D11723C4758900E867FF /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
+		08FF678923A9156A00EACD58 /* Blurred.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blurred.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		08FF678C23A9156A00EACD58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		08FF679023A9156C00EACD58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		08FF679323A9156C00EACD58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		08FF679523A9156C00EACD58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5515742223C43FC5006BE18F /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		553B8D1A23C2E43D0009CA0F /* DimManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0889D0FF23C4720E00E867FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08FF678623A9156A00EACD58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				085174A123FD2E9700B3B84F /* HotKey in Frameworks */,
+				0889D11423C4738900E867FF /* ServiceManagement.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0853667523C4C09F00567AA8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0853667623C4C0AC00567AA8 /* WindowInfo.swift */,
+				085174A223FD2EF300B3B84F /* GlobalKeyBindPreferences.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0889D10323C4720E00E867FF /* BlurredLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				0851749E23FD0A3100B3B84F /* BlurredLauncher.entitlements */,
+				0889D10423C4720E00E867FF /* AppDelegate.swift */,
+				0889D10823C4721100E867FF /* Assets.xcassets */,
+				0889D10A23C4721100E867FF /* Main.storyboard */,
+				0889D10D23C4721100E867FF /* Info.plist */,
+			);
+			path = BlurredLauncher;
+			sourceTree = "<group>";
+		};
+		0889D11223C4738900E867FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0889D11323C4738900E867FF /* ServiceManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FF678023A9156A00EACD58 = {
+			isa = PBXGroup;
+			children = (
+				08FF678B23A9156A00EACD58 /* Blurred */,
+				0889D10323C4720E00E867FF /* BlurredLauncher */,
+				0889D11223C4738900E867FF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		08FF678A23A9156A00EACD58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08FF678923A9156A00EACD58 /* Blurred.app */,
+				0889D10223C4720E00E867FF /* BlurredLauncher.app */,
+			);
+			name = Products;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		08FF678B23A9156A00EACD58 /* Blurred */ = {
+			isa = PBXGroup;
+			children = (
+				0851749D23FD0A0B00B3B84F /* Blurred.entitlements */,
+				0853667523C4C09F00567AA8 /* Models */,
+				55AA99F623B07ACC005478F2 /* Utilities */,
+				55AA99F523B07AB8005478F2 /* ViewControllers */,
+				08FF678C23A9156A00EACD58 /* AppDelegate.swift */,
+				08FF679023A9156C00EACD58 /* Assets.xcassets */,
+				08FF679223A9156C00EACD58 /* Main.storyboard */,
+				08FF679523A9156C00EACD58 /* Info.plist */,
+				08FF678A23A9156A00EACD58 /* Products */,
+			);
+			path = Blurred;
+			sourceTree = "<group>";
+		};
+		55AA99F523B07AB8005478F2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0851749A23FD099400B3B84F /* PreferenceView.swift */,
+				0851749923FD099400B3B84F /* SettingObservable.swift */,
+				5515742223C43FC5006BE18F /* StatusBarController.swift */,
+				085174A423FD34C500B3B84F /* PreferencesWindow.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		55AA99F623B07ACC005478F2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */,
+				553B8D1A23C2E43D0009CA0F /* DimManager.swift */,
+				0889D11723C4758900E867FF /* Util.swift */,
+				0853667823C58F1E00567AA8 /* Collection+Extension.swift */,
+				083501CB23C5DF0400F6E567 /* EventMonitor.swift */,
+				08203CCF23CD9CBE0006AE7C /* Bundle+Extension.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0889D10123C4720E00E867FF /* BlurredLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0889D11123C4721100E867FF /* Build configuration list for PBXNativeTarget "BlurredLauncher" */;
+			buildPhases = (
+				0889D0FE23C4720E00E867FF /* Sources */,
+				0889D0FF23C4720E00E867FF /* Frameworks */,
+				0889D10023C4720E00E867FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlurredLauncher;
+			productName = dimmerBarLauncher;
+			productReference = 0889D10223C4720E00E867FF /* BlurredLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		08FF678823A9156A00EACD58 /* Blurred */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08FF679923A9156C00EACD58 /* Build configuration list for PBXNativeTarget "Blurred" */;
+			buildPhases = (
+				08FF678523A9156A00EACD58 /* Sources */,
+				08FF678623A9156A00EACD58 /* Frameworks */,
+				08FF678723A9156A00EACD58 /* Resources */,
+				0889D11523C4739600E867FF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blurred;
+			packageProductDependencies = (
+				085174A023FD2E9700B3B84F /* HotKey */,
+			);
+			productName = "Dimmer Bar";
+			productReference = 08FF678923A9156A00EACD58 /* Blurred.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FF678123A9156A00EACD58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Dwarves Foundation";
+				TargetAttributes = {
+					0889D10123C4720E00E867FF = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					08FF678823A9156A00EACD58 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 08FF678423A9156A00EACD58 /* Build configuration list for PBXProject "Blurred" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 08FF678023A9156A00EACD58;
+			packageReferences = (
+				0851749F23FD2E9700B3B84F /* XCRemoteSwiftPackageReference "HotKey" */,
+			);
+			productRefGroup = 08FF678A23A9156A00EACD58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08FF678823A9156A00EACD58 /* Blurred */,
+				0889D10123C4720E00E867FF /* BlurredLauncher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0889D10023C4720E00E867FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0889D10923C4721100E867FF /* Assets.xcassets in Resources */,
+				0889D10C23C4721100E867FF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08FF678723A9156A00EACD58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08FF679123A9156C00EACD58 /* Assets.xcassets in Resources */,
+				08FF679423A9156C00EACD58 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0889D0FE23C4720E00E867FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0889D10523C4720E00E867FF /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08FF678523A9156A00EACD58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				553B8D1B23C2E43D0009CA0F /* DimManager.swift in Sources */,
+				083501CC23C5DF0400F6E567 /* EventMonitor.swift in Sources */,
+				5515742323C43FC5006BE18F /* StatusBarController.swift in Sources */,
+				0851749B23FD099400B3B84F /* SettingObservable.swift in Sources */,
+				08203CD023CD9CBE0006AE7C /* Bundle+Extension.swift in Sources */,
+				0889D11823C4758900E867FF /* Util.swift in Sources */,
+				5515742523C46FE8006BE18F /* UserDefaults+Extension.swift in Sources */,
+				08FF678D23A9156A00EACD58 /* AppDelegate.swift in Sources */,
+				0853667923C58F1E00567AA8 /* Collection+Extension.swift in Sources */,
+				0853667723C4C0AC00567AA8 /* WindowInfo.swift in Sources */,
+				085174A523FD34C500B3B84F /* PreferencesWindow.swift in Sources */,
+				085174A323FD2EF300B3B84F /* GlobalKeyBindPreferences.swift in Sources */,
+				0851749C23FD099400B3B84F /* PreferenceView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0889D10A23C4721100E867FF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0889D10B23C4721100E867FF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		08FF679223A9156C00EACD58 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08FF679323A9156C00EACD58 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0889D10F23C4721100E867FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlurredLauncher/BlurredLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W777S7V8TN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = BlurredLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = foundation.dwarves.blurredlauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0889D11023C4721100E867FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlurredLauncher/BlurredLauncher.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W777S7V8TN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = BlurredLauncher/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = foundation.dwarves.blurredlauncher;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		08FF679723A9156C00EACD58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		08FF679823A9156C00EACD58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		08FF679A23A9156C00EACD58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Blurred/Blurred.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W777S7V8TN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Blurred/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = foundation.dwarves.blurred;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		08FF679B23A9156C00EACD58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Blurred/Blurred.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = W777S7V8TN;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = Blurred/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = foundation.dwarves.blurred;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0889D11123C4721100E867FF /* Build configuration list for PBXNativeTarget "BlurredLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0889D10F23C4721100E867FF /* Debug */,
+				0889D11023C4721100E867FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08FF678423A9156A00EACD58 /* Build configuration list for PBXProject "Blurred" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08FF679723A9156C00EACD58 /* Debug */,
+				08FF679823A9156C00EACD58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08FF679923A9156C00EACD58 /* Build configuration list for PBXNativeTarget "Blurred" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08FF679A23A9156C00EACD58 /* Debug */,
+				08FF679B23A9156C00EACD58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0851749F23FD2E9700B3B84F /* XCRemoteSwiftPackageReference "HotKey" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/soffes/HotKey";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		085174A023FD2E9700B3B84F /* HotKey */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0851749F23FD2E9700B3B84F /* XCRemoteSwiftPackageReference "HotKey" */;
+			productName = HotKey;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 08FF678123A9156A00EACD58 /* Project object */;
+}

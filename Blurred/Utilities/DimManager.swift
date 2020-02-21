@@ -1,0 +1,132 @@
+//
+//  DimManager.swift
+//  Dimmer Bar
+//
+//  Created by Trung Phan on 12/23/19.
+//  Copyright © 2019 Dwarves Foundation. All rights reserved.
+//
+
+import Foundation
+import Cocoa
+
+enum DimMode: Int {
+    case single
+    case parallel
+}
+
+class DimManager {
+    //MARK: - Init
+    static let sharedInstance = DimManager()
+    
+    private init() {}
+    
+    //MARK: - Variable(s)
+    var didReciptActiveApplicationChanged: ((NSRunningApplication?) -> Void)?
+
+    let setting = SettingObservable()
+    private var windows:[NSWindow] = []
+
+}
+
+//MARK: - Core function Helper Methods
+extension DimManager {
+    func getFrontMostApplication() -> NSRunningApplication? {
+        return NSWorkspace.shared.frontmostApplication
+    }
+
+    func windowForScreen(screen: NSScreen, color: NSColor, windowInfos: [WindowInfo]) -> NSWindow {
+        
+        let frame = NSRect(origin: .zero, size: screen.frame.size)
+        let overlayWindow = NSWindow.init(contentRect: frame, styleMask: .borderless, backing: .buffered, defer: false, screen: screen)
+        overlayWindow.isReleasedWhenClosed = false
+        overlayWindow.animationBehavior = .none
+        overlayWindow.backgroundColor = color
+        overlayWindow.ignoresMouseEvents = true
+        overlayWindow.collectionBehavior = [.transient, .fullScreenNone]
+        overlayWindow.level = .normal
+        
+        var windowNumber = 0
+        switch setting.dimMode {
+        case .single:
+            windowNumber = windowInfos[safe: 0]?.number ?? 0
+        case .parallel:
+            // Get frontmost window of each screen
+            let newScreen = NSRect(x: screen.frame.minX, y: NSScreen.screens[0].frame.maxY - screen.frame.maxY, width: screen.frame.width, height: screen.frame.height)
+            let windowInfo = windowInfos.first(where: {
+                return  newScreen.minX < $0.bounds!.midX &&
+                        newScreen.maxX > $0.bounds!.midX &&
+                        newScreen.minY < $0.bounds!.midY &&
+                        newScreen.maxY > $0.bounds!.midY
+            })
+            
+            windowNumber = windowInfo?.number ?? 0
+        }
+
+        overlayWindow.order(.below, relativeTo: windowNumber)
+        return overlayWindow
+    }
+}
+
+extension DimManager {
+    func observerActiveWindowChanged() {
+        let nc = NSWorkspace.shared.notificationCenter
+        nc.addObserver(self, selector: #selector(workspaceDidReceiptAppllicatinActiveNotification), name: NSWorkspace.didActivateApplicationNotification, object: nil)
+    }
+    
+    private func removeAllNotification() {
+        NSWorkspace.shared.notificationCenter.removeObserver(self, name: NSWorkspace.didActivateApplicationNotification, object: nil)
+    }
+    
+    @objc private func workspaceDidReceiptAppllicatinActiveNotification(ntf: Notification) {
+        if let activeAppDict = ntf.userInfo as? [AnyHashable : NSRunningApplication],
+            let didReciptActiveApplicationChanged = self.didReciptActiveApplicationChanged,
+            let activeApplication = activeAppDict["NSWorkspaceApplicationKey"] {
+            didReciptActiveApplicationChanged(activeApplication)
+        }
+    }
+}
+
+extension DimManager {
+    func prepareForDim() {
+        DimManager.sharedInstance.observerActiveWindowChanged()
+        DimManager.sharedInstance.didReciptActiveApplicationChanged = {[weak self] runningApplication in
+            self?.dim(runningApplication: runningApplication)
+        }
+    }
+    
+
+    func dim(runningApplication: NSRunningApplication?) {
+        self.removeAllOverlay()
+        
+        if DimManager.sharedInstance.setting.isEnabled == false {return}
+        
+        if let bundle = runningApplication?.bundleIdentifier, bundle == "com.apple.finder" {
+            return
+        }
+        
+        let windowInfos = getWindowInfos()
+        let screens = NSScreen.screens
+    
+        let color = NSColor.black.withAlphaComponent(CGFloat(DimManager.sharedInstance.setting.alpha/100.0))
+        
+        for screen in screens {
+            let overlayWindow = DimManager.sharedInstance.windowForScreen(screen: screen, color: color, windowInfos: windowInfos)
+            self.windows.append(overlayWindow)
+        }
+    }
+    
+    private func removeAllOverlay() {
+        for overlayWindow in self.windows {
+            overlayWindow.close()
+        }
+        self.windows.removeAll()
+    }
+    
+    private func getWindowInfos() -> [WindowInfo] {
+        let options = CGWindowListOption([.optionOnScreenOnly, .excludeDesktopElements])
+        let windowsListInfo = CGWindowListCopyWindowInfo(options, CGWindowID(0))
+        let infoList = windowsListInfo as! [[String:Any]]
+        let windowInfos = infoList.map { WindowInfo.init(dict: $0) }.filter { $0.layer == 0 }
+        return windowInfos
+    }
+}
