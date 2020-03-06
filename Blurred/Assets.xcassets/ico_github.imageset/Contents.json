@@ -10,6 +10,9 @@
     "author" : "xcode"
   },
   "properties" : {
+    "auto-scaling" : "auto",
+    "compression-type" : "lossless",
+    "preserves-vector-representation" : true,
     "template-rendering-intent" : "template"
   }
 }
