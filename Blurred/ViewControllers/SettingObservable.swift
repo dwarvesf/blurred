@@ -10,60 +10,45 @@ import Foundation
 import Combine
 
 final class SettingObservable: ObservableObject {
-    let objectWillChange = PassthroughSubject<Void, Never>()
     
-    var isStartWhenLogin: Bool = UserDefaults.isStartWhenLogin {
-        willSet {
-            UserDefaults.isStartWhenLogin = newValue
-            objectWillChange.send()
+    @Published var isStartWhenLogin: Bool = UserDefaults.isStartWhenLogin {
+        didSet {
+            UserDefaults.isStartWhenLogin = self.isStartWhenLogin
         }
     }
     
-    var isOpenPrefWhenOpenApp: Bool = UserDefaults.isOpenPrefWhenOpenApp {
-          willSet {
-              UserDefaults.isOpenPrefWhenOpenApp = newValue
-              objectWillChange.send()
-          }
-    }
-    
-    var dimMode: DimMode = DimMode(rawValue: UserDefaults.dimMode) ?? .single  {
-        willSet {
-            UserDefaults.dimMode = newValue.rawValue
-            objectWillChange.send()
+    @Published var isOpenPrefWhenOpenApp: Bool = UserDefaults.isOpenPrefWhenOpenApp {
+        didSet {
+            UserDefaults.isOpenPrefWhenOpenApp = self.isOpenPrefWhenOpenApp
         }
     }
     
-    var alpha: Double = UserDefaults.alpha {
-        willSet {
-            UserDefaults.alpha = newValue
-            objectWillChange.send()
+    @Published var dimMode: DimMode = DimMode(rawValue: UserDefaults.dimMode) ?? .single  {
+        didSet {
+            UserDefaults.dimMode = self.dimMode.rawValue
         }
     }
     
-    var isEnabled: Bool = UserDefaults.isEnabled {
-        willSet {
-            UserDefaults.isEnabled = newValue
-            objectWillChange.send()
+    @Published var alpha: Double = UserDefaults.alpha {
+        didSet {
+            UserDefaults.alpha = self.alpha
         }
     }
     
-    var globalHotkey: GlobalKeybindPreferences? = UserDefaults.globalKey {
-        willSet {
-            UserDefaults.globalKey = newValue
-            objectWillChange.send()
+    @Published var isEnabled: Bool = UserDefaults.isEnabled {
+        didSet {
+            UserDefaults.isEnabled = self.isEnabled
         }
     }
     
-    var currentHotkeyLabel: String = UserDefaults.globalKey?.description ?? "Set Hotkey" {
-        willSet {
-            objectWillChange.send()
+    @Published var globalHotkey: GlobalKeybindPreferences? = UserDefaults.globalKey {
+        didSet {
+            UserDefaults.globalKey = self.globalHotkey
         }
     }
     
-    var isListenningForHotkey: Bool = false {
-        willSet {
-            objectWillChange.send()
-        }
-    }
+    @Published var currentHotkeyLabel: String = UserDefaults.globalKey?.description ?? "Set Hotkey"
+    
+    @Published var isListenningForHotkey: Bool = false
     
 }

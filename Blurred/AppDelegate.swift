@@ -24,21 +24,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func setupHotKey() {
-        guard let globalKey = UserDefaults.globalKey else {return}
-        hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKey.keyCode, carbonModifiers: globalKey.carbonFlags))
-    }
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         hideDockIcon()
         setupAutoStartAtLogin()
         openPrefWindowIfNeeded()
         setupHotKey()
     }
-
+    
+    func applicationDidChangeScreenParameters(_ notification: Notification) {
+        DimManager.sharedInstance.dim(runningApplication: NSWorkspace.shared.frontmostApplication)
+    }
+    
+    func setupHotKey() {
+        guard let globalKey = UserDefaults.globalKey else {return}
+        hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKey.keyCode, carbonModifiers: globalKey.carbonFlags))
+    }
+    
     func openPrefWindowIfNeeded() {
         if UserDefaults.isOpenPrefWhenOpenApp {
-            statusBarController.openPreferences()
+            PreferencesWindowController.shared.window?.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
         }
     }
     

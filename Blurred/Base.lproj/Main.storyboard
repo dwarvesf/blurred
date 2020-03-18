@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -10,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Dimmer Bar" id="1Xt-HY-uBw">
+                            <menuItem title="Blurred" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Dimmer Bar" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="Blurred" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About Dimmer Bar" id="5kV-Vb-QxS">
+                                        <menuItem title="About Dimmer Bar" id="5kV-Vb-QxS" userLabel="About Blurred">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -28,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide Dimmer Bar" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide Dimmer Bar" keyEquivalent="h" id="Olw-nP-bQN" userLabel="Hide Blurred">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -46,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit Dimmer Bar" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit Dimmer Bar" keyEquivalent="q" id="4sb-4s-VLi" userLabel="Quit Blurred">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -95,7 +96,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="Dimmer Bar Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="Dimmer Bar Help" keyEquivalent="?" id="FKE-Sm-Kum" userLabel="Blurred Help">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -109,11 +110,76 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Dimmer_Bar" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Blurred" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-54" y="2"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="ip1-jM-Vvd">
+            <objects>
+                <windowController storyboardIdentifier="PreferencesWindowController" showSeguePresentationStyle="single" id="FTq-aN-eAj" customClass="PreferencesWindowController" customModule="Blurred" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="General" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="9fi-09-O47">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
+                        <rect key="contentRect" x="196" y="240" width="450" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="47B2E2C2-82B2-4C57-9EBF-6C8AE0786C9B" centeredItem="e5C-OW-vng" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="150-9G-Joi">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="AKo-Bo-2FZ"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="GNe-Hk-6Uq"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="H19-c0-U1O"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="Ifs-rY-aAl"/>
+                                <toolbarItem implicitItemIdentifier="F7DA19CF-BC58-47E1-8140-D04939EE4CA7" label="Custom View" paletteLabel="Custom View" sizingBehavior="auto" selectable="YES" id="e5C-OW-vng">
+                                    <nil key="toolTip"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="1TP-Xp-Bdd">
+                                        <rect key="frame" x="0.0" y="14" width="145" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" segmentDistribution="fillEqually" style="texturedRounded" trackingMode="selectOne" id="F3F-sa-eQc">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment label="General" selected="YES"/>
+                                                <segment label="About" tag="1"/>
+                                            </segments>
+                                        </segmentedCell>
+                                        <connections>
+                                            <action selector="switchSegment:" target="FTq-aN-eAj" id="wdM-fu-7Q1"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="vYH-1u-kXb"/>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="e5C-OW-vng"/>
+                            </defaultToolbarItems>
+                        </toolbar>
+                        <connections>
+                            <outlet property="delegate" destination="FTq-aN-eAj" id="cEe-lF-RKO"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="DOm-ST-mwr" kind="relationship" relationship="window.shadowedContentViewController" id="NAV-y9-itP"/>
+                    </connections>
+                </windowController>
+                <customObject id="w3E-TA-97t" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-252" y="252"/>
+        </scene>
+        <!--General View Controller-->
+        <scene sceneID="F3S-zq-Npz">
+            <objects>
+                <hostingController storyboardIdentifier="GeneralViewController" id="DOm-ST-mwr" customClass="GeneralViewController" customModule="Blurred" customModuleProvider="target" sceneMemberID="viewController"/>
+                <customObject id="6lK-ZQ-tqO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="252"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="F2h-ed-KM6">
+            <objects>
+                <hostingController storyboardIdentifier="AboutViewController" id="X6G-wL-yJJ" customClass="AboutViewController" customModule="Blurred" customModuleProvider="target" sceneMemberID="viewController"/>
+                <customObject id="gIE-FH-Qjb" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="618"/>
         </scene>
     </scenes>
 </document>
