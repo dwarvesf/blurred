@@ -136,9 +136,11 @@ extension DimManager {
 
 extension DimManager {
     private func observeSettingChanged() {
+        // DON'T receive this publisher on Main scheduler
+        // It will cause delay
+        // Still don't know why :-?
         self.setting.$alpha
             .removeDuplicates()
-            .receive(on: DispatchQueue.main)
             .sink(receiveValue: adjustDimmingLevel)
             .store(in: &cancellableSet)
         
