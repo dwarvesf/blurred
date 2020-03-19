@@ -124,7 +124,7 @@ extension DimManager {
         self.windows.removeAll()
     }
     
-    /// This func will return all the window info of windows all the screen
+    /// This func will return the window info of windows on all the screen
     private func getWindowInfos() -> [WindowInfo] {
         let options = CGWindowListOption([.excludeDesktopElements, .optionOnScreenOnly])
         let windowsListInfo = CGWindowListCopyWindowInfo(options, CGWindowID(0))
@@ -136,6 +136,7 @@ extension DimManager {
 
 extension DimManager {
     private func observeSettingChanged() {
+        
         // DON'T receive this publisher on Main scheduler
         // It will cause delay
         // Still don't know why :-?

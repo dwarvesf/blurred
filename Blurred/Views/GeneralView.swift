@@ -39,7 +39,7 @@ struct GeneralView: View {
                 
                 Slider(value: $setting.alpha, in: 10...100, step: 10)
                     .disabled(!setting.isEnabled)
-
+                
                 Text("100%")
             }
             
@@ -73,15 +73,17 @@ struct GeneralView: View {
                 VStack(alignment: .center) {
                     Text("Global shortcut")
                         .font(.headline)
-                    HStack(spacing: 0) {
+                    HStack(spacing: 2) {
                         
-                        Button(setting.currentHotkeyLabel) {
+                        
+                        Button(action: {
                             self.setting.isListenningForHotkey = true
-                        }
-                        .background(setting.isListenningForHotkey ?
-                            RoundedRectangle(cornerRadius: 2).foregroundColor(Color(NSColor.controlLightHighlightColor)) :
-                            RoundedRectangle(cornerRadius: 2).foregroundColor(.clear)
-                        )
+                            self.setting.currentHotkeyLabel = "Listening..."
+                        }) {
+                            Text(self.setting.currentHotkeyLabel)
+                                .frame(minWidth: 30, maxWidth: 80)
+                        }.buttonStyle(BlueButtonStyle(setting: setting))
+                        
                         
                         Button("⌫") {
                             self.setting.isListenningForHotkey = false
@@ -101,6 +103,20 @@ struct GeneralView: View {
                 }
             }
         }.padding()
+    }
+}
+
+struct BlueButtonStyle: ButtonStyle {
+    let setting: SettingObservable
+    
+    init(setting: SettingObservable) {
+        self.setting = setting
+    }
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .padding(2)
+            .background(setting.isListenningForHotkey || configuration.isPressed ? Color.accentColor : Color(NSColor.controlColor))
+            .cornerRadius(4.0)
     }
 }
 
