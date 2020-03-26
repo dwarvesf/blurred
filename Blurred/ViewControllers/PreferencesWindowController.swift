@@ -23,7 +23,9 @@ class PreferencesWindowController: NSWindowController {
     
     private var menuSegment: MenuSegment = .general {
         didSet {
-            updateVC()
+            if oldValue != menuSegment {
+                updateVC()
+            }
         }
     }
     
@@ -77,6 +79,14 @@ extension PreferencesWindowController {
         super.keyDown(with: event)
         guard self.setting.isListenningForHotkey else {return}
         updateGlobalShortcut(event)
+    }
+    
+    override func keyUp(with event: NSEvent) {
+        super.keyUp(with: event)
+        if event.keyCode == 53 { // Esc
+            self.setting.isListenningForHotkey = false
+            self.setting.currentHotkeyLabel = setting.globalHotkey?.description ?? "Set Hotkey"
+        }
     }
     
     override func flagsChanged(with event: NSEvent) {
@@ -142,10 +152,11 @@ extension PreferencesWindowController {
     }
     
     private func resetKeyBind() {
-        self.setting.currentHotkeyLabel = "Set Hotkey"
-        self.setting.globalHotkey = nil
+        self.setting.currentHotkeyLabel = setting.globalHotkey?.description ?? "Set Hotkey"
         self.setting.isListenningForHotkey = false
-        let appDelegate = NSApplication.shared.delegate as! AppDelegate
-        appDelegate.hotKey = nil
+        if setting.globalHotkey == nil {
+            let appDelegate = NSApplication.shared.delegate as! AppDelegate
+            appDelegate.hotKey = nil
+        }
     }
 }

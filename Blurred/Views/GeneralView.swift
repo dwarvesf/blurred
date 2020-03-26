@@ -91,6 +91,8 @@ struct GeneralView: View {
                             self.setting.globalHotkey = nil
                             let appDelegate = NSApplication.shared.delegate as! AppDelegate
                             appDelegate.hotKey = nil
+                            
+                            
                         }
                         .disabled(setting.isListenningForHotkey || setting.globalHotkey == nil)
                     }

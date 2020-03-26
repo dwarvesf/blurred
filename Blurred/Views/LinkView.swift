@@ -22,11 +22,12 @@ struct LinkView: View {
                 HStack {
                     Image(imageName)
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 24)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 16)
                         .foregroundColor(.primary)
                     
                     Text(title)
+                        .fontWeight(.medium)
                         .foregroundColor(.primary)
                 }
             }.buttonStyle(LinkButtonStyle())

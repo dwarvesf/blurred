@@ -30,7 +30,7 @@ class DimManager {
         self.observeSettingChanged()
     }
     
-    func dim(runningApplication: NSRunningApplication?) {
+    func dim(runningApplication: NSRunningApplication?, withDelay: Bool = true) {
         
         guard DimManager.sharedInstance.setting.isEnabled else {
             self.removeAllOverlay()
@@ -47,7 +47,7 @@ class DimManager {
         
         let color = NSColor.black.withAlphaComponent(CGFloat(DimManager.sharedInstance.setting.alpha/100.0))
         
-        DimManager.sharedInstance.windows(color: color) { [weak self] windows in
+        DimManager.sharedInstance.windows(color: color, withDelay: withDelay) { [weak self] windows in
             guard let strongSelf = self else {return}
             strongSelf.removeAllOverlay()
             strongSelf.windows = windows
@@ -71,8 +71,9 @@ extension DimManager {
         return NSWorkspace.shared.frontmostApplication
     }
     
-    private func windows(color: NSColor, didCreateWindows: @escaping ([NSWindow])->()) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) { [weak self] in
+    private func windows(color: NSColor, withDelay: Bool, didCreateWindows: @escaping ([NSWindow])->()) {
+        let delay = withDelay ? 0.2 : 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
             guard let strongSelf = self else {return}
             let windowInfos = strongSelf.getWindowInfos()
             
@@ -152,8 +153,9 @@ extension DimManager {
         
         self.setting.$dimMode
             .receive(on: DispatchQueue.main)
-            .map { _ in return nil }
-            .sink(receiveValue: dim)
+            .sink(receiveValue: { [weak self] _ in
+                self?.dim(runningApplication: nil)
+            })
             .store(in: &cancellableSet)
     }
     

@@ -15,43 +15,48 @@ struct AboutView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                HStack {
+                HStack(alignment: .top, spacing: 44) {
                     Image("ico_app")
                         .resizable()
-                        .scaledToFit()
-                        .frame(width: 150)
+                        .frame(width: 120, height: 120, alignment: .center)
                     
-                    VStack(alignment: .leading) {
-                        Text("Blurred")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .foregroundColor(.primary)
+                    VStack(alignment: .leading, spacing: 24) {
                         
-                        Text("Focus on your work")
-                            .font(.headline)
-                            .foregroundColor(.secondary)
+                        VStack(alignment: .leading, spacing: 12) {
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text("Blurred")
+                                    .font(.system(size: 27))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(.primary)
+                                
+                                Text("Focus on your work")
+                                    .font(.system(size: 18))
+                                    .foregroundColor(.primary)
+                            }
+                            
+                            Text("Version \(self.releaseVersion) (\(self.buildVersion))")
+                                .font(.system(size: 13))
+                                .foregroundColor(.secondary)
+                        }
                         
-                        Text("Version \(self.releaseVersion) (\(self.buildVersion))")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
+                        VStack(alignment: .leading, spacing: 14) {
+                            LinkView(imageName: "ico_compass", title: "Know more about us", link: "https://dwarves.foundation/apps")
+                            LinkView(imageName: "ico_twitter", title: "Follow us on Twitter", link:"https://twitter.com/dwarvesf")
+                            LinkView(imageName: "ico_github", title: "This app is fully open source", link: "https://github.com/dwarvesf/Blurred")
+                            LinkView(imageName: "ico_email", title: "Email us", link: "mailto:macos@d.foundation")
+                        }
                     }
                 }
-                                
-                VStack(alignment: .leading, spacing: 16) {
-                    LinkView(imageName: "ico_compass", title: "Know more about us", link: "https://dwarves.foundation/apps")
-                    LinkView(imageName: "ico_twitter", title: "Follow us on Twitter", link:"https://twitter.com/dwarvesf")
-                    LinkView(imageName: "ico_github", title: "This app is fully open source", link: "https://github.com/dwarvesf/Blurred")
-                    LinkView(imageName: "ico_email", title: "Email us", link: "mailto:macos@d.foundation")
-                }.padding(.top, 30)
+                .padding(.top, 44)
+                .padding(.leading, 44)
                 
                 Spacer()
                 
                 Text("MIT © Dwarves Foundation")
-                    .font(.system(size: 11))
+                    .font(.system(size: 13))
                     .foregroundColor(.secondary)
-                    .padding(.bottom, 0)
+                    .padding()
             }
-        .padding()
         }
     }
 }

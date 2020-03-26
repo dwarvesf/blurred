@@ -24,11 +24,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    
+    let eventMonitor = EventMonitor(mask: .leftMouseUp) { _ in
+        // Hanlde this without delay
+        DimManager.sharedInstance.dim(runningApplication: NSWorkspace.shared.frontmostApplication, withDelay: false)
+    }
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         hideDockIcon()
         setupAutoStartAtLogin()
         openPrefWindowIfNeeded()
         setupHotKey()
+        eventMonitor.start()
     }
     
     func applicationDidChangeScreenParameters(_ notification: Notification) {
