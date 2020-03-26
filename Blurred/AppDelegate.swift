@@ -24,9 +24,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
-    func setupHotKey() {
-        guard let globalKey = UserDefaults.globalKey else {return}
-        hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKey.keyCode, carbonModifiers: globalKey.carbonFlags))
+    
+    let eventMonitor = EventMonitor(mask: .leftMouseUp) { _ in
+        // Hanlde this without delay
+        DimManager.sharedInstance.dim(runningApplication: NSWorkspace.shared.frontmostApplication, withDelay: false)
     }
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -34,11 +35,22 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         setupAutoStartAtLogin()
         openPrefWindowIfNeeded()
         setupHotKey()
+        eventMonitor.start()
     }
-
+    
+    func applicationDidChangeScreenParameters(_ notification: Notification) {
+        DimManager.sharedInstance.dim(runningApplication: NSWorkspace.shared.frontmostApplication)
+    }
+    
+    func setupHotKey() {
+        guard let globalKey = UserDefaults.globalKey else {return}
+        hotKey = HotKey(keyCombo: KeyCombo(carbonKeyCode: globalKey.keyCode, carbonModifiers: globalKey.carbonFlags))
+    }
+    
     func openPrefWindowIfNeeded() {
         if UserDefaults.isOpenPrefWhenOpenApp {
-            statusBarController.openPreferences()
+            PreferencesWindowController.shared.window?.makeKeyAndOrderFront(nil)
+            NSApp.activate(ignoringOtherApps: true)
         }
     }
     
