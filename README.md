@@ -46,6 +46,11 @@ Please read [this](CONTRIBUTING.md) before you make a contribution.
 ## Requirements
 macOS version >= 10.15
 
+## You may also like
+- [Hidden Bar](https://github.com/dwarvesf/hidden) - An ultra-light MacOS utility that helps hide menu bar icons
+- [Micro Sniff](https://github.com/dwarvesf/micro-sniff) - An ultra-light macOS utility that notify whenever your micro-device is being used
+
+
 ## License
 
 MIT &copy; [Dwarves Foundation](https://github.com/dwarvesf)
