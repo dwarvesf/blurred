@@ -32,6 +32,7 @@
 		5515742323C43FC5006BE18F /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515742223C43FC5006BE18F /* StatusBarController.swift */; };
 		5515742523C46FE8006BE18F /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */; };
 		553B8D1B23C2E43D0009CA0F /* DimManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B8D1A23C2E43D0009CA0F /* DimManager.swift */; };
+		557D86AF2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D86AE2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -77,6 +78,7 @@
 		5515742223C43FC5006BE18F /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
 		5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		553B8D1A23C2E43D0009CA0F /* DimManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimManager.swift; sourceTree = "<group>"; };
+		557D86AE2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarSwipeToSetAlphaView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		0850B62224208EA200717EDE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				557D86AE2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift */,
 				0850B62324208EC300717EDE /* LinkView.swift */,
 				0851749A23FD099400B3B84F /* GeneralView.swift */,
 				0850B62524208EE700717EDE /* AboutView.swift */,
@@ -330,6 +333,7 @@
 				0853667923C58F1E00567AA8 /* Collection+Extension.swift in Sources */,
 				0853667723C4C0AC00567AA8 /* WindowInfo.swift in Sources */,
 				085174A323FD2EF300B3B84F /* GlobalKeyBindPreferences.swift in Sources */,
+				557D86AF2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift in Sources */,
 				0851749C23FD099400B3B84F /* GeneralView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

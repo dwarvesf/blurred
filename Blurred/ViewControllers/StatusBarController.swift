@@ -25,6 +25,9 @@ class StatusBarController{
     private func setupView() {
         if let button = menuStatusItem.button {
             button.image = #imageLiteral(resourceName: "ico_menu")
+            
+            let swipeView = StatusBarSwipeToSetAlphaView(frame: CGRect(origin: CGPoint(x: 0, y: 0), size: button.frame.size))
+            button.addSubview(swipeView)
         }
         menuStatusItem.menu = getContextMenu()
     }
