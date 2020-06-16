@@ -11,6 +11,9 @@ import SwiftUI
 import HotKey
 
 class PreferencesWindowController: NSWindowController {
+    
+    @IBOutlet weak var segmentController: NSSegmentedControl!
+    
     enum MenuSegment: Int {
         case general
         case about
@@ -38,6 +41,10 @@ class PreferencesWindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         updateVC()
+        
+        // Set localized titles for segment labels
+        self.segmentController.setLabel("General".localized, forSegment: 0)
+        self.segmentController.setLabel("About".localized, forSegment: 1)
     }
     
     
@@ -50,10 +57,10 @@ class PreferencesWindowController: NSWindowController {
         switch menuSegment {
         case .general:
             self.window?.contentViewController = generalVC
-            self.window?.title = "General"
+            self.window?.title = "General".localized
         case .about:
             self.window?.contentViewController = aboutVC
-            self.window?.title = "About"
+            self.window?.title = "About".localized
         }
         
         var windowOrigin = CGPoint(x: 0, y: 0)

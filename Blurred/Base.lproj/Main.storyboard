@@ -158,10 +158,12 @@
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="segmentController" destination="1TP-Xp-Bdd" id="21q-5x-07N"/>
                         <segue destination="DOm-ST-mwr" kind="relationship" relationship="window.shadowedContentViewController" id="NAV-y9-itP"/>
                     </connections>
                 </windowController>
                 <customObject id="w3E-TA-97t" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="Wvd-EC-ZUa"/>
             </objects>
             <point key="canvasLocation" x="-252" y="252"/>
         </scene>
