@@ -26,12 +26,17 @@ struct LinkView: View {
                         .frame(width: 16)
                         .foregroundColor(.primary)
                     
-                    Text(title)
+                    Text(localizedTitle)
                         .fontWeight(.medium)
                         .foregroundColor(.primary)
                 }
             }.buttonStyle(LinkButtonStyle())
         }
+    }
+    
+    private var localizedTitle: String {
+        let localizedString = NSLocalizedString(title, comment: "")
+        return localizedString
     }
 }
 
