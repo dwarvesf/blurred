@@ -33,6 +33,8 @@
 		5515742523C46FE8006BE18F /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */; };
 		553B8D1B23C2E43D0009CA0F /* DimManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B8D1A23C2E43D0009CA0F /* DimManager.swift */; };
 		557D86AF2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557D86AE2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift */; };
+		B32C8D902498D3A9003562C9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B32C8D922498D3A9003562C9 /* Localizable.strings */; };
+		B32C8D992498E837003562C9 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32C8D982498E837003562C9 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -79,6 +81,12 @@
 		5515742423C46FE8006BE18F /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		553B8D1A23C2E43D0009CA0F /* DimManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DimManager.swift; sourceTree = "<group>"; };
 		557D86AE2473878900C4B809 /* StatusBarSwipeToSetAlphaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarSwipeToSetAlphaView.swift; sourceTree = "<group>"; };
+		B32C8D812498CF8D003562C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		B32C8D8C2498D0F7003562C9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B32C8D8D2498D0F7003562C9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		B32C8D912498D3A9003562C9 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B32C8D932498D3AE003562C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B32C8D982498E837003562C9 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +178,7 @@
 				55AA99F523B07AB8005478F2 /* ViewControllers */,
 				08FF678C23A9156A00EACD58 /* AppDelegate.swift */,
 				08FF679023A9156C00EACD58 /* Assets.xcassets */,
+				B32C8D922498D3A9003562C9 /* Localizable.strings */,
 				08FF679223A9156C00EACD58 /* Main.storyboard */,
 				08FF679523A9156C00EACD58 /* Info.plist */,
 				08FF678A23A9156A00EACD58 /* Products */,
@@ -198,6 +207,7 @@
 				0853667823C58F1E00567AA8 /* Collection+Extension.swift */,
 				083501CB23C5DF0400F6E567 /* EventMonitor.swift */,
 				08203CCF23CD9CBE0006AE7C /* Bundle+Extension.swift */,
+				B32C8D982498E837003562C9 /* String+Extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -268,6 +278,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 08FF678023A9156A00EACD58;
 			packageReferences = (
@@ -298,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				08FF679123A9156C00EACD58 /* Assets.xcassets in Resources */,
+				B32C8D902498D3A9003562C9 /* Localizable.strings in Resources */,
 				08FF679423A9156C00EACD58 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +332,7 @@
 				0850B62624208EE700717EDE /* AboutView.swift in Sources */,
 				553B8D1B23C2E43D0009CA0F /* DimManager.swift in Sources */,
 				083501CC23C5DF0400F6E567 /* EventMonitor.swift in Sources */,
+				B32C8D992498E837003562C9 /* String+Extension.swift in Sources */,
 				0850B6282420ABCB00717EDE /* GeneralViewController.swift in Sources */,
 				5515742323C43FC5006BE18F /* StatusBarController.swift in Sources */,
 				0851749B23FD099400B3B84F /* SettingObservable.swift in Sources */,
@@ -345,6 +358,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				0889D10B23C4721100E867FF /* Base */,
+				B32C8D8D2498D0F7003562C9 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -353,8 +367,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				08FF679323A9156C00EACD58 /* Base */,
+				B32C8D812498CF8D003562C9 /* en */,
+				B32C8D8C2498D0F7003562C9 /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B32C8D922498D3A9003562C9 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B32C8D912498D3A9003562C9 /* zh-Hans */,
+				B32C8D932498D3AE003562C9 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -367,7 +392,7 @@
 				CODE_SIGN_ENTITLEMENTS = BlurredLauncher/BlurredLauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W777S7V8TN;
+				DEVELOPMENT_TEAM = VGURA84Q2L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlurredLauncher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,7 +414,7 @@
 				CODE_SIGN_ENTITLEMENTS = BlurredLauncher/BlurredLauncher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = W777S7V8TN;
+				DEVELOPMENT_TEAM = VGURA84Q2L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = BlurredLauncher/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -408,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -468,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -526,7 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = W777S7V8TN;
+				DEVELOPMENT_TEAM = VGURA84Q2L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Blurred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -551,7 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = W777S7V8TN;
+				DEVELOPMENT_TEAM = VGURA84Q2L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = Blurred/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

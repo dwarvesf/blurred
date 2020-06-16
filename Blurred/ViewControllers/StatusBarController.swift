@@ -59,7 +59,7 @@ class StatusBarController{
     private func getContextMenu() -> NSMenu {
         let menu = NSMenu()
         let sliderMenuItem = NSMenuItem()
-        let titleEnable = DimManager.sharedInstance.setting.isEnabled ? "Disable" : "Enable"
+        let titleEnable = DimManager.sharedInstance.setting.isEnabled ? "Disable".localized : "Enable".localized
         
         let enableButton = NSMenuItem(title: titleEnable, action: #selector(toggleEnable), keyEquivalent: "E")
         enableButton.target = self
@@ -67,7 +67,7 @@ class StatusBarController{
         DimManager.sharedInstance.setting.$isEnabled
             .receive(on: DispatchQueue.main)
             .sink {[weak enableButton] isEnabled in
-                let title = isEnabled ? "Disable" : "Enable"
+                let title = isEnabled ? "Disable".localized : "Enable".localized
                 enableButton?.title = title
         }
         .store(in: &cancellableSet)
@@ -85,15 +85,15 @@ class StatusBarController{
         ])
         
         sliderMenuItem.view = view
-        menu.addItem(withTitle: "Slide to set Dim level", action: nil, keyEquivalent: "")
+        menu.addItem(withTitle: "Slide to set Dim level".localized, action: nil, keyEquivalent: "")
         menu.addItem(sliderMenuItem)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(enableButton)
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Preferences...", action: #selector(openPreferences), keyEquivalent: "P"))
+        menu.addItem(NSMenuItem(title: "Preferences...".localized, action: #selector(openPreferences), keyEquivalent: "P"))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        menu.item(withTitle: "Preferences...")?.target = self
+        menu.addItem(NSMenuItem(title: "Quit".localized, action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        menu.item(withTitle: "Preferences...".localized)?.target = self
         return menu
     }
     
