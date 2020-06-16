@@ -7,7 +7,6 @@
 */
 
 // GeneralView
-"General"="通用";
 "Blurred level"="模糊等级";
 "Blur mode"="模糊模式";
 "Single"="单个";
@@ -20,10 +19,16 @@
 "Set Hotkey"="设置快捷键";
 
 // AboutView
-"About"="关于";
 "Blurred"="Blurred";
 "Focus on your work"="专注你的工作";
 "Know more about us"="关于我们";
 "Follow us on Twitter"="在推特上关注我们";
 "This app is fully open source"="此应用完全开源";
 "Email us"="电子邮件";
+
+// Status Bar
+"Slide to set Dim level"="滑动来设置模糊等级";
+"Preferences..."="偏好设置...";
+"Quit"="退出";
+"Disable"="关闭";
+"Enable"="开启";
