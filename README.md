@@ -24,6 +24,12 @@ A macOS utility that helps reduce distraction by dimming your inactive noise
 
 [![AppStore](misc/appstore.svg)](https://apps.apple.com/us/app/blurred/id1497527363)
 
+#### Using Homebrew
+
+```
+brew cask install blurred
+```
+
 #### Manual download
 
 - [Download latest version](https://github.com/dwarvesf/Blurred/releases/latest)
