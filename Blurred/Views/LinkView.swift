@@ -26,7 +26,7 @@ struct LinkView: View {
                         .frame(width: 16)
                         .foregroundColor(.primary)
                     
-                    Text(title)
+                    Text(title.localized)
                         .fontWeight(.medium)
                         .foregroundColor(.primary)
                 }

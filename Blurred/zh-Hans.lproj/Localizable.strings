@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Blurred
+
+  Created by Peter Luo on 2020/6/16.
+  Copyright © 2020 Dwarves Foundation. All rights reserved.
+*/
+
+// GeneralView
+"Blurred level"="模糊等级";
+"Blur mode"="模糊模式";
+"Single"="单个";
+"Parallel"="平行";
+"Enable Blurred"="启用背景模糊";
+"Start Blurred when log in"="在登录时启用背景模糊";
+"Open Preferences Window when login"="在登录时显示偏好设置";
+"Global shortcut"="全局快捷键";
+"Listening..."="正在监听...";
+"Set Hotkey"="设置快捷键";
+
+// AboutView
+"Blurred"="Blurred";
+"Focus on your work"="专注你的工作";
+"Know more about us"="关于我们";
+"Follow us on Twitter"="在推特上关注我们";
+"This app is fully open source"="此应用完全开源";
+"Email us"="电子邮件";
+
+// Status Bar
+"Slide to set Dim level"="滑动来设置模糊等级";
+"Preferences..."="偏好设置...";
+"Quit"="退出";
+"Disable"="关闭";
+"Enable"="开启";
+"General"="通用";
+"About"="关于";
