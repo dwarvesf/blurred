@@ -30,7 +30,7 @@ A macOS utility that helps reduce distraction by dimming your inactive noise
 #### Using Homebrew
 
 ```
-brew cask install blurred
+brew install --cask blurred
 ```
 
 #### Manual download
