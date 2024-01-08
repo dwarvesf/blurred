@@ -14,7 +14,6 @@ class AboutViewController: NSHostingController<AboutView> {
     @objc required dynamic init?(coder: NSCoder) {
         super.init(coder: coder, rootView: AboutView())
         preferredContentSize = CGSize(width: 500, height: 360)
-        preferredScreenOrigin = .init(x: 0.5, y: 0.5)
     }
     
     class func initWithStoryboard() -> AboutViewController {
